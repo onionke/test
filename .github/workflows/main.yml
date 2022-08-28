@@ -11,8 +11,9 @@ jobs:
       - name: Upload from public_html via FTP
         uses: airvzxf/ftp-deployment-action@latest
         with:
-          server: business64.web-hosting.com
-          user: yohannes@onion.ke
-          password: 7X4r).;X$V6x
+          server: ${{ secrets.FTP_SERVER }}
+          user: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          ftp_ssl_allow: "true"
           local_dir: "./"
           delete: "false"
